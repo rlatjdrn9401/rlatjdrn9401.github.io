@@ -8,6 +8,47 @@
                     <h1>Techno Machine</h1>
                     <h3>CTP431 20110273 김성구</h3>   
                     <h2>Intro</h2>
+
+                    <p>Web audio API example: load a sound file and play/stop it on a button click.</p>
+                    <button onclick="loadSound(url)">Load</button>
+                    <button onclick="playSound(myAudioBuffer)">Play</button>
+                    <button onclick="stopSound()">Stop</button>
+                    
+                    <!-- Referred from Web Audio Session #1 of CTP431 Course-->  
+                    
+                    <script>
+                    window.AudioContext = window.AudioContext || window.webkitAudioContext;
+                    var context = new AudioContext;
+                    var myAudioBuffer = null;
+                    var url = "./Procratinator.m4a";
+                    function loadSound(url) {
+                      var request = new XMLHttpRequest();
+                      request.open('GET', url, true);
+                      request.responseType = 'arraybuffer';
+                      request.onload = function() {
+                        console.log(url + " has been loaded.")
+                        context.decodeAudioData(request.response, function(buffer) {
+                            myAudioBuffer = buffer;
+                            console.log(url + " has been decoded.")     
+                        });
+                      }
+                      request.send();
+                    }
+                 
+                    var source = null;
+                    function playSound(anybuffer) {
+                      source = context.createBufferSource();
+                      source.buffer = anybuffer;
+                      source.connect(context.destination);
+                      source.start();
+                    }
+                 
+                    function stopSound() {
+                      if (source) {
+                        source.stop();
+                      }
+                    }
+                    </script>
                     <p>
                         I started this project from my original production of techno music, "Procrastinator (Original Mix)". The track was intended to be part of my solo album as a techno producer. The original track was produced with DAW(Digital Audio Workstation) called 'Ableton Suite 9'. 
                     </p>
