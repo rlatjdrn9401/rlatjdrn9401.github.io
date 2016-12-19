@@ -1,0 +1,54 @@
+<html>
+
+<head>
+	<title> Techno Machine  </title>
+	<link  href='final.css' rel='stylesheet'>
+	<script src="nexusUI.js"></script>
+	<script src="Tone.js"></script>
+	<script src="final_project.js"></script>
+	<!--<script src="synth.js"></script>-->
+	
+</head>
+
+
+<body style = "background-color:black;">
+	<h1><font color="white"> Techno Machine </h1>
+
+	<!--<input type="text" id="myText" value="">
+	<p class="panelLabel"> <font color="white"> input 8 character long text </p>
+
+	<button onclick="Bootup()">Click!</button>
+	<button onclick="Run()">Click to Run!</button>
+
+	<p id="demo"><font color="white"> </p>-->
+
+	<div class="part1">
+		<canvas nx="number" id="gui_bpm" height="100" width="333"> </canvas>
+		<p class="panelLabel" align = "center"><font color="white">  BPM </p>
+	</div>
+	
+	<div class="part2">
+		<canvas nx="button" id="gui_start" height="100" width="333"></canvas>
+		<p class="panelLabel" align = "center"><font color="white">  Start </p>
+	</div>
+	
+	<div class="part3">
+		<canvas nx="button" id="gui_stop" height="100" width="333"></canvas>
+		<p class="panelLabel" align = "center"><font color="white">  Stop </p>
+	</div>
+
+
+	<div class="clearfix"></div>
+
+
+	<p class="panelLabel"><font color="white">  Sequencer </p>
+	<canvas nx="matrix" id="gui_sequencer" height="500" width="1000" label="Sequencer"> </canvas>
+
+	<div class="part5">
+		<canvas nx="position" id="gui_position" height="300" width="500"> </canvas>
+		<p class="panelLabel" align = "center"><font color="white">  Synth Filter Frequency Control </p>
+	</div>
+
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+p.panelLabel {
+    font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    line-height: 20px;
+    padding: 5px;
+    margin: 1px 1px 1px 1px;
+}
+
+.part1,.part2,.part3 {
+    float: left;
+}
+.clearfix{
+    clear:both
+}
